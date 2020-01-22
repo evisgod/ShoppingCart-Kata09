@@ -12,17 +12,17 @@ Calculates the total cost of a shopping cart based on a set of pricing rules.The
 
 
 #Solution
-
-To be honest understanding the problem took a bit of time when I start working on this, but once that is done half of the problem is solved and now you have to transfer your thoughts into code. Since inserted items into cart are Strings, I have to count the number of items corresponding to a single SKU and then check if special prize is available for it and then use the below mentioned formula's:
+ 
+Since items inserted into cart are Strings, I have to count the number of items corresponding to a single SKU(grouping by identity) and then check if special prize is available for input quantity. Use below mentioned formulae to calculate the offered price or single unit price in case special price is not available:
 
 	 int discountQuantity =   quantity/totalQuantity;
 	 int remainingQuantity = quantity % totalQuantity;
 	 int totalPrice = dicountQuantity * specialPrice + remainingQuantity * UnitPrice;
 
-I tried to maintain the very basic, simple and easy architectue for the application, maintaining the layered approach to different Objects. 
+I tried to maintain a very basic, simple and easy architecture for the application.
 
 #Enhancements:
-	Right now, I have only give 3-4 hours to problem. We can add more features as well into it:
-	1. Logging and exception handling.
-	2. Use of Strategy Design pattern while reading the pricing_rules from different input files.
-	3. Integration test suite.
+	1. Use of Strategy Design pattern while reading the pricing_rules from config file.
+	2. Use DB to store and retrieve pricing rules to make it more dynamic and performant.
+	3. Addition new feature to checkout like removeItems. 
+	4. Logging and Exception handling.

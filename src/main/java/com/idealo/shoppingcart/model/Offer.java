@@ -1,20 +1,20 @@
-package com.idealo.shoppingcart.domain;
-
+package com.idealo.shoppingcart.model;
 
 /**
  * This Model defines the offered quantity and special Price for an item.
+ * 
  * @author Vishnu
  *
  */
-public class Offers {
-	private int offeredQuantity;
-	private int specialPrice;
+public class Offer {
+	private final int offeredQuantity;
+	private final int specialPrice;
 
 	/**
 	 * @param offeredQuantity
 	 * @param specialPrice
 	 */
-	public Offers(int offeredQuantity, int specialPrice) {
+	public Offer(int offeredQuantity, int specialPrice) {
 		this.offeredQuantity = offeredQuantity;
 		this.specialPrice = specialPrice;
 	}
@@ -44,7 +44,7 @@ public class Offers {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Offers other = (Offers) obj;
+		Offer other = (Offer) obj;
 		if (offeredQuantity != other.offeredQuantity)
 			return false;
 		if (specialPrice != other.specialPrice)
@@ -56,5 +56,4 @@ public class Offers {
 	public String toString() {
 		return "Offers [offeredQuantity=" + offeredQuantity + ", specialPrice=" + specialPrice + "]";
 	}
-
 }

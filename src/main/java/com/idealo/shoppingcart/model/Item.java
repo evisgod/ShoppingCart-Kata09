@@ -1,4 +1,7 @@
-package com.idealo.shoppingcart.domain;
+package com.idealo.shoppingcart.model;
+
+import com.idealo.shoppingcart.model.Offer;
+import com.idealo.shoppingcart.model.Sku;
 
 /**
  * This model defines the pricing rules corresponding to different SKU's.
@@ -6,15 +9,15 @@ package com.idealo.shoppingcart.domain;
  * @author Vishnu
  *
  */
-public class PricingRule {
-	private Sku sku;
-	private Offers offer;
+public class Item {
+	private final Sku sku;
+	private final Offer offer;
 
 	/**
 	 * @param sku
 	 * @param offer
 	 */
-	public PricingRule(Sku sku, Offers offer) {
+	public Item(Sku sku, Offer offer) {
 		this.sku = sku;
 		this.offer = offer;
 	}
@@ -22,16 +25,16 @@ public class PricingRule {
 	/**
 	 * @param sku
 	 */
-	public PricingRule(Sku sku) {
+	public Item(Sku sku) {
 		this.sku = sku;
-		this.offer = new Offers(1, sku.getUnitPrice());
+		this.offer = new Offer(1, sku.getUnitPrice());
 	}
 
 	public Sku getSku() {
 		return sku;
 	}
 
-	public Offers getOffer() {
+	public Offer getOffer() {
 		return offer;
 	}
 
@@ -52,7 +55,7 @@ public class PricingRule {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		PricingRule other = (PricingRule) obj;
+		Item other = (Item) obj;
 		if (offer == null) {
 			if (other.offer != null)
 				return false;

@@ -1,19 +1,13 @@
-package com.idealo.shoppingcart.domain;
-
+package com.idealo.shoppingcart.model;
 
 /**
  * This model defines the SKU's id with unit price.
  * @author Vishnu
- *
  */
 public class Sku {
-	private String id;
-	private int unitPrice;
+	private final String id;
+	private final int unitPrice;
 
-	/**
-	 * @param id
-	 * @param unitPrice
-	 */
 	public Sku(String id, int unitPrice) {
 		this.id = id;
 		this.unitPrice = unitPrice;
